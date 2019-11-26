@@ -238,6 +238,8 @@ integ(exp(X),X,exp(X)).
 integ(exp(B*X),X,exp(B*X)/B) :- atomic(B).
 integ(ln(X),X,X*ln(X)-X).
 integ(ln(B*X),X,X*ln(B*X)-X) :- atomic(B).
+integ(ln(X+A),X,(A+X)*ln(X+A)-X) :- atomic(A).
+integ(ln(B*X+A),X,(A/B + X)*ln(B*X + A)-X) :- atomic(A), atomic(B).
 integ(cos(X),X,sin(X)).
 integ(sin(X),X,-cos(X)).
 integ(cos(A*X+B),X,sin(A*X+B)/A) :- atomic(A), atomic(B).
