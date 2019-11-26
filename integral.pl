@@ -264,4 +264,7 @@ integ( 1/sqrt(X^2-A^2) , X , ln( X+sqrt(X^2-A^2) ) ).
 integ( 1/sqrt(A^2-X^2) , X , arcsin(X/A) ).
 integ( 1/sqrt(A^2+X^2) , X , ln(X+sqrt(X^2+A^2)) ).
 
+%if all else fails
+integ(F,X,F)
+
 integ(U*DV,X,U*V- IVDU) :- deriv(V,X,DV), deriv(U,X,DU), integ(V*DU,X,IVDU).
